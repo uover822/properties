@@ -1,0 +1,4 @@
+
+FROM msr-properties:1
+
+CMD ["node", "/app/srv/properties-prod.js"]

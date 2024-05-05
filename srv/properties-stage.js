@@ -1,0 +1,8 @@
+let Seneca = require('seneca')
+Seneca({tag: 'properties', legacy: {meta: true}, timeout: 5000})
+//  .use('zipkin-tracer', {host: 'zipkin', sampling: 1})
+//  .use('statsd', {host: 'stats'})
+  .use('entity')
+  .use('../properties.js')
+  .listen(8030)
+  .client({pin:'role:store', host:'store', port:8045})

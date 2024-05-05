@@ -1,0 +1,6 @@
+let Seneca = require('seneca')
+Seneca({tag: 'properties', timeout: 5000})
+  //.test('print')
+  .use('../properties.js')
+  .listen(8030)
+  .client({pin:'role:store', port:8045})
